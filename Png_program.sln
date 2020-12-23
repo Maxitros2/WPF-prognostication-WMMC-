@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Png_program", "Png_program\Png_program.csproj", "{0CDCE0AF-3C40-4672-8563-5FF712CE48BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CDCE0AF-3C40-4672-8563-5FF712CE48BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CDCE0AF-3C40-4672-8563-5FF712CE48BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CDCE0AF-3C40-4672-8563-5FF712CE48BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CDCE0AF-3C40-4672-8563-5FF712CE48BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14EA9B5C-AF60-4DAF-9785-AE947B08F2A8}
+	EndGlobalSection
+EndGlobal

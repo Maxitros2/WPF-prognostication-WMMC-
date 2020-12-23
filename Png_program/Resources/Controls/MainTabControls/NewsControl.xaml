@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Png_program.Resources.Controls.MainTabControls.NewsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Png_program.Resources.Controls.MainTabControls"
+             mc:Ignorable="d" MaxWidth="1140" VerticalContentAlignment="Top">    
+    <Grid Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="770">
+        <Canvas x:Name="Marked" Margin="0,0,730,130">
+            <Path x:Name="Path_38" Width="40.008" Height="40.018" Stretch="Fill" Fill="#FF84CA00" Data="F1 M 542.104,378.173C 553.151,378.173 562.108,387.131 562.108,398.182C 562.108,409.233 553.151,418.191 542.104,418.191C 531.056,418.191 522.1,409.233 522.1,398.182C 522.1,387.131 531.056,378.173 542.104,378.173 Z " HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Path.Effect >
+                    <DropShadowEffect Opacity="0.4" Direction="245" BlurRadius="12" ShadowDepth="3"/>
+                </Path.Effect>
+            </Path>
+
+            <Path x:Name="Path_39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 538.259,406.764L 530.43,398.979C 530.211,398.76 530.102,398.479 530.102,398.135C 530.102,397.791 530.211,397.51 530.43,397.291L 532.164,395.603C 532.383,395.353 532.649,395.228 532.961,395.228C 533.305,395.228 533.602,395.353 533.852,395.603L 539.103,400.855L 550.356,389.6C 550.606,389.35 550.887,389.225 551.2,389.225C 551.544,389.225 551.825,389.35 552.044,389.6L 553.778,391.288C 553.997,391.507 554.106,391.788 554.106,392.132C 554.106,392.476 553.997,392.757 553.778,392.977L 539.948,406.764C 539.729,407.014 539.448,407.139 539.103,407.139C 538.759,407.139 538.478,407.014 538.259,406.764 Z " HorizontalAlignment="Left" VerticalAlignment="Top" Width="36" Height="18" Canvas.Left="2.171" Canvas.Top="10">
+                <Path.Effect >
+                    <DropShadowEffect Opacity="0.4" Direction="245" BlurRadius="12" ShadowDepth="3"/>
+                </Path.Effect>
+            </Path>
+        </Canvas>
+        <Canvas x:Name="NotMarked" Margin="0,0,730,130">
+            <Path x:Name="Path_1" Width="40.008" Height="40.018" Stretch="Fill" Fill="#EDEDED" Data="F1 M 542.104,378.173C 553.151,378.173 562.108,387.131 562.108,398.182C 562.108,409.233 553.151,418.191 542.104,418.191C 531.056,418.191 522.1,409.233 522.1,398.182C 522.1,387.131 531.056,378.173 542.104,378.173 Z " HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Path.Effect >
+                    <DropShadowEffect Opacity="0.4" Direction="245" BlurRadius="12" ShadowDepth="3"/>
+                </Path.Effect>
+            </Path>
+        </Canvas>
+        <Label x:Name="NewsLabel" Style="{StaticResource NormalFont}" FontSize="28" FontWeight="Bold" Padding="0" Margin="60,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Style="{StaticResource NormalFont}" Foreground="#FF303030" TextWrapping="Wrap" FontSize="22"  Padding="0" Margin="60,85,0,0"><Run x:Name="Text"/></TextBlock>
+        <Label Style="{StaticResource NormalFont}" x:Name="Date" Foreground="#BBBBBB" FontSize="28" Padding="0" Margin="60,35,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+    </Grid>
+</UserControl>

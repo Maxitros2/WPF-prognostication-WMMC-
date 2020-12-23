@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Png_program.Resources.Controls.AdditionalControls.RoundedButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Png_program.Resources.Controls.AdditionalControls"
+             mc:Ignorable="d" Height="50" Width="220" x:Name="RoundedButtonCont" FontSize="20">
+    <Viewbox Margin="0">
+        <Viewbox.Triggers>
+            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard Storyboard.TargetName="ButtonPath"  x:Name="TransitionS">
+                        <ColorAnimation x:Name="Transition"
+                            Storyboard.TargetProperty="(Shape.Fill).Color"
+                            AutoReverse="False"
+                            Duration="0:0:0.2"
+                                          />
+                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)"
+                            To="0.3"
+                            AutoReverse="False"
+                            Duration="0:0:0.2"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard Storyboard.TargetName="ButtonPath" x:Name="TransitionBackS">
+                        <ColorAnimation x:Name="TransitionBack"
+                            Storyboard.TargetProperty="(Shape.Fill).Color"
+                            AutoReverse="False"
+                            Duration="0:0:0.2"
+                                          />
+                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)"
+                            To="0"
+                            AutoReverse="False"
+                            Duration="0:0:0.2"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Viewbox.Triggers>
+        <Grid x:Name="BaseStatusButton" Margin="0" Height="50" Width="220">
+            <Canvas>
+                <Path x:Name="ButtonPath" Stretch="Fill" Fill="#FF008C95" Data="F1 M 1200.23,182.083L 1380.27,182.083C 1391.31,182.083 1400.27,191.041 1400.27,202.092L 1400.27,212.097C 1400.27,223.148 1391.31,232.106 1380.27,232.106L 1200.23,232.106C 1189.18,232.106 1180.23,223.148 1180.23,212.097L 1180.23,202.092C 1180.23,191.041 1189.18,182.083 1200.23,182.083 Z " HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Path.Effect>
+                        <DropShadowEffect Opacity="0.0" Direction="245" BlurRadius="12" ShadowDepth="3"/>
+                    </Path.Effect>
+                </Path>
+            </Canvas>
+            <Path x:Name="PathImage" Stretch="Uniform" Margin="5,10,140,5" Fill="#FFFF"/>
+            <Label x:Name="ControlButtonText" Padding="0" Content="dsadsa" Foreground="White" Style="{StaticResource NormalFont}" FontSize="{Binding ElementName=RoundedButtonCont, Path=FontSize}" FontWeight="SemiBold" Margin="58,0,20,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

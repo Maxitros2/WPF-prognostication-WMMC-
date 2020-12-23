@@ -1,0 +1,99 @@
+﻿<Window x:Class="Png_program.Resources.Controls.AuthControls.UserEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:AdditionalControls="clr-namespace:Png_program.Resources.Controls.AdditionalControls"
+        xmlns:local="clr-namespace:Png_program.Resources.Controls.AuthControls"
+        mc:Ignorable="d"
+        Title="Редактировние пользователя" Height="551" Width="668" Background="#FFE8EAEC">
+    <Viewbox>
+        <Grid Height="682" Width="857">
+            <Label x:Name="Path_15" Content="Редактировние пользователя" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" FontSize="30" FontWeight="Bold" />
+
+
+            <StackPanel Margin="0,65,0,0">
+                <Border Margin="20,10,0,0" >
+                    <StackPanel>
+                        <Label Content="Логин:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="0,0,0,8"/>
+                        <TextBox x:Name="LoginPlace" BorderThickness="0" Text="{Binding UserName}" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" VerticalAlignment="Top" FontSize="25" Background="White"  Margin="0"/>
+                    </StackPanel>
+                </Border>
+                <Border Margin="20,10,0,0" >
+                    <StackPanel>
+                        <Label Content="Фамилия:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="0,0,0,8"/>
+                        <TextBox BorderThickness="0" Text="{Binding Name1}" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" VerticalAlignment="Top" FontSize="25" Background="White" Margin="0"/>
+                    </StackPanel>
+                </Border>
+                <Border Margin="20,10,0,0">
+                    <StackPanel>
+                        <Label Content="Имя:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+                        <TextBox BorderThickness="0" Text="{Binding Name2}" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" VerticalAlignment="Top" FontSize="25" Background="White" Margin="0"/>
+                    </StackPanel>
+                </Border>
+                <Border Margin="20,10,0,0">
+                    <StackPanel>
+                        <Label Content="Отчество:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+                        <TextBox BorderThickness="0" Text="{Binding Name3}" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" VerticalAlignment="Top" FontSize="25" Background="White" Margin="-2,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Margin="20,10,0,0">
+                    <StackPanel>
+                        <Label Content="Тип:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+                        <Grid x:Name="UserStatusControl" Height="55" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="183*"/>
+                                <ColumnDefinition Width="181*"/>
+                            </Grid.ColumnDefinitions>
+                            <AdditionalControls:CustomGrid x:Name="UserButton" MouseDown="UserButton_MouseDown" Margin="100,2,101,3" EndColor="#FF31FF43">
+                                <AdditionalControls:CustomGrid.StartColor>
+                                    <SolidColorBrush Color="#FFB8B8B8"/>                                    
+                                </AdditionalControls:CustomGrid.StartColor>
+                                <Rectangle Fill="#FFB8B8B8" RadiusX="10" RadiusY="10"/>
+                                <Label Content="Пользователь" Style="{StaticResource NormalFont}" Foreground="White" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                            </AdditionalControls:CustomGrid>
+                            <AdditionalControls:CustomGrid x:Name="AdminButton" MouseDown="AdminButton_MouseDown" Margin="100,2,101,3" EndColor="#FFFF1818" StartColor="#FFB8B8B8" Grid.Column="1">
+                                <Rectangle Fill="#FFB8B8B8" RadiusX="10" RadiusY="10"/>
+                                <Label Content="Администратор" Style="{StaticResource NormalFont}" Foreground="White" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                            </AdditionalControls:CustomGrid>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                <Border x:Name="PasswordBorder" Margin="20,10,0,0">
+                    <StackPanel>
+                        <Label Content="Пароль:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+                        <TextBox x:Name="PassBox" BorderThickness="0" Text="{Binding PassWord}" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" VerticalAlignment="Top" FontSize="25" Background="White" Margin="0"/>
+                    </StackPanel>
+                </Border>
+                <Grid Height="90" Margin="20,8,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="253*"/>
+                        <ColumnDefinition Width="700*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.ColumnSpan="2">
+                        <StackPanel>
+                            <Label Content="Привилегии:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+                            <AdditionalControls:RoundedButton MouseDown="RoundedButton_MouseDown_1"  Width="190" Fill="#FF008897" TransitionColor="#FF86C000"  Label="Просмотреть" OnlyText="True" FontSize="20" Margin="0" HorizontalAlignment="Left" Height="56" />
+                        </StackPanel>
+                    </Border>
+                    <StackPanel x:Name="AdminTools" Grid.Column="1" Margin="0,0,0,0" Orientation="Vertical">
+                        <Label Content="Администрирвание:" Style="{StaticResource NormalFont}" Foreground="#FF3C3838" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+                        <Grid Height="56">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="30*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <AdditionalControls:RoundedButton HorizontalAlignment="Stretch" Fill="#FF008C95" TransitionColor="#FF86C000" MouseDown="RoundedButton_MouseDown_2"  Label="Изм-ть привилегии" OnlyText="True" FontSize="20" Margin="0" Height="50" Width="205" />
+                            <AdditionalControls:RoundedButton  Checked="False" Fill="#FF008C95" TransitionColor="#FF86C000" MouseDown="RoundedButton_MouseDown_3" Label="Сброс пароля" OnlyText="True" FontSize="20" Margin="0" Grid.Column="1" Height="50" Width="205"/>
+                            <AdditionalControls:RoundedButton Fill="#FF008C95" TransitionColor="#FF86C000" MouseDown="RoundedButton_MouseDown_4" Label="Изменить логин" OnlyText="True" FontSize="20" Grid.Column="2" Height="50" Width="205"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+            <AdditionalControls:RoundedButton Label="Сохранить" MouseDown="RoundedButton_MouseDown" Icon="F1 M 44.5083,706.893C 44.5083,706.747 44.4353,706.602 44.2892,706.456L 44.1252,706.292C 43.9792,706.146 43.8332,706.073 43.6881,706.073L 31.1617,706.073C 30.7246,706.073 30.5056,706.292 30.5056,706.729L 30.5056,712.419C 30.5056,712.857 30.7246,713.077 31.1617,713.077L 43.8522,713.077C 44.2892,713.077 44.5083,712.857 44.5083,712.419M 36.7408,722.596C 37.4339,723.253 38.2731,723.582 39.2573,723.582C 40.2415,723.582 41.0626,723.253 41.7188,722.596C 42.4109,721.903 42.7579,721.063 42.7579,720.08C 42.7579,719.094 42.4109,718.273 41.7188,717.617C 41.0626,716.923 40.2415,716.578 39.2573,716.578C 38.2731,716.578 37.4339,716.923 36.7408,717.617C 36.0847,718.273 35.7566,719.094 35.7566,720.08C 35.7566,721.063 36.0847,721.903 36.7408,722.596 Z M 50.7435,707.932C 51.2546,708.444 51.5096,709.064 51.5096,709.793L 51.5096,724.457C 51.5096,725.185 51.2546,725.806 50.7435,726.316C 50.2334,726.827 49.6133,727.083 48.8841,727.083L 29.6304,727.083C 28.9013,727.083 28.2812,726.827 27.7711,726.316C 27.26,725.806 27.0049,725.185 27.0049,724.457L 27.0049,705.198C 27.0049,704.468 27.26,703.847 27.7711,703.337C 28.2812,702.827 28.9013,702.572 29.6304,702.572L 44.2892,702.572C 45.0184,702.572 45.6385,702.827 46.1496,703.337L 50.7435,707.932 Z "  Margin="617,586,20,36"/>
+            <AdditionalControls:RoundedButton Label="Сменить пароль" MouseDown="RoundedButton_MouseDown_5" OnlyText="True" Margin="20,586,617,36"/>
+        </Grid>
+    </Viewbox>
+</Window>

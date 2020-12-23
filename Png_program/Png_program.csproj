@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CDCE0AF-3C40-4672-8563-5FF712CE48BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Png_program</RootNamespace>
+    <AssemblyName>Png_program</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.3.2\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Resources\Controls\AdditionalControls\AspectRatio.cs" />
+    <Compile Include="Resources\Controls\AdditionalControls\CustomCal.cs" />
+    <Compile Include="Resources\Controls\AdditionalControls\VersionChanger.xaml.cs">
+      <DependentUpon>VersionChanger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AdditionalControls\ListToString.cs" />
+    <Compile Include="Resources\Controls\AdditionalControls\CustomGrid.cs" />
+    <Compile Include="Resources\Controls\AdditionalControls\CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AdditionalControls\DataChanger.xaml.cs">
+      <DependentUpon>DataChanger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AdditionalControls\RoundedButton.xaml.cs">
+      <DependentUpon>RoundedButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AuthControls\AuthWindow.xaml.cs">
+      <DependentUpon>AuthWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AuthControls\UserTab.xaml.cs">
+      <DependentUpon>UserTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AuthControls\PermissionItem.xaml.cs">
+      <DependentUpon>PermissionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AuthControls\PermissionViewer.xaml.cs">
+      <DependentUpon>PermissionViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AuthControls\UserContext.cs" />
+    <Compile Include="Resources\Controls\AuthControls\UserData.cs" />
+    <Compile Include="Resources\Controls\AuthControls\UserEditWindow.xaml.cs">
+      <DependentUpon>UserEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\AuthControls\UserViewModels.cs" />
+    <Compile Include="Resources\Controls\DatabaseversionControl.xaml.cs">
+      <DependentUpon>DatabaseversionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\Data\DataItem\DataContext.cs" />
+    <Compile Include="Resources\Controls\Data\DataItem\DataItem.cs" />
+    <Compile Include="Resources\Controls\Data\DataItem\KeyFactor.cs" />
+    <Compile Include="Resources\Controls\Data\Data\ImportContext.cs" />
+    <Compile Include="Resources\Controls\Data\Data\ImportData.cs" />
+    <Compile Include="Resources\Controls\Data\Data\ImportViewModels.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanVGPZ.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanNVGPK.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanBGPK.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanYPGPZ.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanYBGPZ.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanNGP.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanMGPZ.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanGGPZ.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanViewModels.cs" />
+    <Compile Include="Resources\Controls\Data\ProgData\LocalConfigWorker.cs" />
+    <Compile Include="Resources\Controls\Data\ProgData\ProgSet.cs" />
+    <Compile Include="Resources\Controls\Data\ProgData\SetChecker.cs" />
+    <Compile Include="Resources\Controls\Data\ProgData\SetContext.cs" />
+    <Compile Include="Resources\Controls\Data\ProgData\SetData.cs" />
+    <Compile Include="Resources\Controls\ImportControls\ImportWindow2.xaml.cs">
+      <DependentUpon>ImportWindow2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\ImportControls\ImportWindow.xaml.cs">
+      <DependentUpon>ImportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\Plan\ZeroToEmpty.cs" />
+    <Compile Include="Resources\Controls\Plan\DateConverter.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanContext.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanData.cs" />
+    <Compile Include="Resources\Controls\Data\Plan\PlanType.cs" />
+    <Compile Include="Resources\Controls\MainTabControls\MainTab.xaml.cs">
+      <DependentUpon>MainTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\MainTabControls\NewsContext.cs" />
+    <Compile Include="Resources\Controls\MainTabControls\NewsControl.xaml.cs">
+      <DependentUpon>NewsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\MainTabControls\NewsData.cs" />
+    <Compile Include="Resources\Controls\MainTabControls\NewsEditWindow.xaml.cs">
+      <DependentUpon>NewsEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\MainTabControls\NewsViewModels.cs" />
+    <Compile Include="Resources\Controls\Plan\PlanTab.xaml.cs">
+      <DependentUpon>PlanTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\utils\CryptHelper.cs" />
+    <Compile Include="Resources\Controls\utils\DateTranslater.cs" />
+    <Compile Include="Resources\Controls\utils\GridColorProperties.cs" />
+    <Compile Include="Resources\Controls\utils\ICloseable.cs" />
+    <Compile Include="Resources\Controls\utils\Permissons.cs" />
+    <Compile Include="Resources\Controls\utils\PropertyHelper.cs" />
+    <Compile Include="Resources\Controls\utils\RelayCommand.cs" />
+    <Compile Include="DBs\AppContexts.cs" />
+    <Compile Include="Resources\Controls\utils\TreeHelper.cs" />
+    <Compile Include="Resources\Controls\utils\User.cs" />
+    <Compile Include="System\Configuration\ConfigurationManager.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Controls\AdditionalControls\CustomMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\AdditionalControls\VersionChanger.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\AdditionalControls\DataChanger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\AdditionalControls\RoundedButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\AuthControls\AuthWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\AuthControls\UserTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\AuthControls\PermissionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\AuthControls\PermissionViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\AuthControls\UserEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\DatabaseversionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\FontHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\ImportControls\ImportWindow2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\ImportControls\ImportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\ImportControls\otherfinal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\MainTabControls\MainTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\MainTabControls\NewsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\MainTabControls\NewsEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\Plan\planfinal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\Plan\PlanTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DBs\Data.db" />
+    <None Include="DBs\Settings.db" />
+    <None Include="DBs\Users.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DBs\News.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Montserrat-Regular.ttf" />
+    <Resource Include="Fonts\Montserrat-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Controls\AdditionalControls\Screenshot_2020-10-06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_2020-10-06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PNG\БГПК.png" />
+    <Resource Include="Resources\PNG\БПГПЗ.png" />
+    <Resource Include="Resources\PNG\ВГПЗ.png" />
+    <Resource Include="Resources\PNG\ГГПЗ.png" />
+    <Resource Include="Resources\PNG\МГПЗ.png" />
+    <Resource Include="Resources\PNG\НГП.png" />
+    <Resource Include="Resources\PNG\ЮБГПЗ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PNG\ЮПГПЗ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PNG\НВГПК.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PNG\arrow.png" />
+    <Resource Include="Resources\PNG\leftmenu1.png" />
+    <Resource Include="Resources\PNG\leftmenu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PNG\planf1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>

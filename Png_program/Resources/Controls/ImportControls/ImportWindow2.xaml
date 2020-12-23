@@ -1,0 +1,241 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Png_program.Resources.Controls.ImportControls"
+              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:AdditionalControls="clr-namespace:Png_program.Resources.Controls.AdditionalControls" x:Class="Png_program.Resources.Controls.ImportControls.ImportWindow2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Canvas Margin="0,0,-620,-354">
+        <Path x:Name="Path" Width="1420" Height="800.996" Canvas.Left="7" Canvas.Top="3.002" Stretch="Fill" Fill="#FFF8F8F8" Data="F1 M 26.9187,3.00397L 1406.92,3.00397C 1417.96,3.00397 1426.92,11.9579 1426.92,23.004L 1426.92,784C 1426.92,795.046 1417.96,804 1406.92,804L 26.9187,804C 15.8727,804 6.91867,795.046 6.91867,784L 6.91867,23.004C 6.91867,11.9579 15.8727,3.00397 26.9187,3.00397 Z "/>
+        <Path x:Name="Path_0" Width="1420" Height="60.075" Canvas.Left="7" Stretch="Fill" Fill="#FFF6F2F2" Data="F1 M 6.91867,20.0001C 6.91867,8.95404 15.8727,6.10352e-005 26.9187,6.10352e-005L 1406.92,6.10352e-005C 1417.97,6.10352e-005 1426.92,8.95404 1426.92,20.0001L 1426.92,60.075L 6.91867,60.075L 6.91867,20.0001 Z "/>
+        <ScrollViewer FlowDirection="LeftToRight" Height="745" Canvas.Left="7" Canvas.Top="59" Width="1403" HorizontalScrollBarVisibility="Visible">
+            <Grid>
+                <ListView BorderThickness="0" x:Name="Items"  Margin="0,40,0,0">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Control.Padding" Value="0"/>
+                            <Setter Property="DockPanel.Dock" Value="Left"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected"
+                            Value="True">
+                                    <Setter Property="Background"
+                            Value="{x:Null}" />
+                                    <Setter Property="BorderBrush"
+                            Value="{x:Null}" />
+                                </Trigger>
+                            </Style.Triggers>
+
+
+                            <Style.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#00000000"/>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#00000000"/>
+                            </Style.Resources>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <Grid   Canvas.Left="7" Canvas.Top="100"  >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="199"/>
+                                    <ColumnDefinition Width="151"/>
+                                    <ColumnDefinition Width="147"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="33"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Style="{StaticResource NormalFont}" IsReadOnly="True" TextWrapping="Wrap" BorderThickness="1" Text="{Binding Key.Data1}" BorderBrush="#FFD1D0D0" Foreground="Black"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" LostFocus="TextBox_LostFocus_1" />
+                                <TextBox Style="{StaticResource NormalFont}" IsReadOnly="True" TextWrapping="Wrap" BorderThickness="1" Text="{Binding Key.Factory}" BorderBrush="#FFD1D0D0" Foreground="Black"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" LostFocus="TextBox_LostFocus_1" Grid.Column="1" />
+                                <TextBox Style="{StaticResource NormalFont}" IsReadOnly="True" TextWrapping="Wrap" BorderThickness="1" Text="{Binding Key.Data2}" BorderBrush="#FFD1D0D0" Foreground="Black"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" LostFocus="TextBox_LostFocus_1" Grid.Column="2" />
+                                <ListView Margin="0,-1,0,0" BorderThickness="0" MinHeight="32"   Grid.Column="3" VerticalAlignment="Stretch"  ItemsSource="{Binding Value}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBox BorderThickness="1" 
+                                                Style="{StaticResource NormalFont}" 
+                                                Tag="{Binding}"
+                                                 Margin="0,0,1,0"
+                                                HorizontalAlignment="Stretch" 
+                                                VerticalAlignment="Stretch" 
+                                                HorizontalContentAlignment="Center" 
+                                                VerticalContentAlignment="Center" 
+                                                Width="114" MinHeight="30"  
+                                                TextWrapping="Wrap" 
+                                                Background="White" LostFocus="TextBox_LostFocus_1"  Text="{Binding DValue, Mode=TwoWay, NotifyOnSourceUpdated=True, TargetNullValue={x:Static sys:String.Empty}, UpdateSourceTrigger=PropertyChanged}"
+                                             />
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="{x:Type ListViewItem}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                                        <ContentPresenter />
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Control.Padding" Value="0"/>
+                                            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch"/>
+                                            <Setter Property="FrameworkElement.VerticalAlignment" Value="Stretch"/>
+                                            <Setter Property="Control.BorderBrush" Value="#FFD1D0D0"/>
+                                            <Setter Property="Control.BorderThickness" Value="1"/>
+                                            <Setter Property="DockPanel.Dock" Value="Left"/>
+
+                                            <Style.Triggers>
+                                                <Trigger Property="IsSelected"
+                            Value="True">
+                                                    <Setter Property="Background"
+                            Value="{x:Null}" />
+                                                    <Setter Property="BorderBrush"
+                            Value="{x:Null}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+
+                                            <Style.Resources>
+                                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#00000000"/>
+                                                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#00000000"/>
+                                            </Style.Resources>
+
+                                        </Style>
+
+                                    </ListView.ItemContainerStyle>
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <DockPanel  LastChildFill="True" SizeChanged="DockPanel_SizeChanged"/>
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                </ListView>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Margin="497,0,0,0" VerticalAlignment="Top" Height="41">
+                    <ListView BorderThickness="0" x:Name="TableHeader" Padding="0" FontWeight="Bold" Margin="0"  Background="WhiteSmoke" BorderBrush="#FFC4C4C4">
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <TextBox  Height="37" Margin="0" 
+                                    HorizontalContentAlignment="Center" 
+                                    VerticalContentAlignment="Center" 
+                                    BorderThickness="1"  Padding="0"
+                                    BorderBrush="#FFD1D0D0" 
+                                    Style="{StaticResource NormalFont}"
+                                    HorizontalAlignment="Stretch" 
+                                    VerticalAlignment="Stretch" 
+                                    Foreground="#FF333333" IsReadOnly="True"
+                                    TextWrapping="Wrap"  Background="#FFDDEAF2"
+                                    Text="{Binding Mode=OneWay}"
+                                    Width="113"/>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="ListViewItem.Padding" Value="0"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected"
+                            Value="True">
+                                        <Setter Property="Background"
+                            Value="{x:Null}" />
+                                        <Setter Property="BorderBrush"
+                            Value="{x:Null}" />
+                                    </Trigger>
+                                </Style.Triggers>
+
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#00000000"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#00000000"/>
+                                </Style.Resources>
+
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate >
+                                <StackPanel  Focusable="False" Orientation="Horizontal" Margin="0" Background="#FFDDEAF2"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </Grid>
+                <Canvas Margin="0,1,-17,0">
+                    <Grid MouseDown="Grid_MouseDown2" Height="39" Width="200">
+                        <Rectangle x:Name="Rectangle_1" Stretch="Fill" StrokeThickness="1.33333" StrokeLineJoin="Round" Stroke="#FFC4C4C4" Fill="#FFDDEAF2"/>
+                        <Label x:Name="Path_2" Content="Поставщик" Style="{StaticResource ResourceKey=NormalFont}"  Foreground="#FF333333" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" />
+                        <Grid  Margin="86,14,6,14" HorizontalAlignment="Right" Width="8" Height="11">
+                            <Rectangle  Margin="-10,-10,-10,-10"/>
+                            <Path x:Name="Path_4" Stretch="Fill" Fill="#FF727272" Data="F1 M 100.971,77.7833C 101.171,77.9832 101.217,78.2203 101.107,78.4942C 100.998,78.7673 100.798,78.9042 100.506,78.9042L 93.9979,78.9042C 93.7058,78.9042 93.5059,78.7673 93.3969,78.4942C 93.2869,78.2203 93.3329,77.9832 93.5329,77.7833L 96.7869,74.5292C 96.9149,74.4012 97.0699,74.3372 97.2519,74.3372C 97.4339,74.3372 97.5889,74.4012 97.7169,74.5292M 93.9979,80.6542L 100.506,80.6542C 100.798,80.6542 100.998,80.7913 101.107,81.0643C 101.217,81.3382 101.171,81.5753 100.971,81.7752L 97.7169,85.0292C 97.5889,85.1573 97.4339,85.2203 97.2519,85.2203C 97.0699,85.2203 96.9149,85.1573 96.7869,85.0292L 93.5329,81.7752C 93.3329,81.5753 93.2869,81.3382 93.3969,81.0643C 93.5059,80.7913 93.7058,80.6542 93.9979,80.6542 Z " Margin="0,0,0.174,0.116"/>
+                        </Grid>
+                    </Grid>
+                    <Grid  MouseDown="Grid_MouseDown1" Height="39" Canvas.Left="200" Width="150">
+                        <Rectangle x:Name="Rectangle_2" Stretch="Fill" StrokeThickness="1.33333" StrokeLineJoin="Round" Stroke="#FFC4C4C4" Fill="#FFDDEAF2"/>
+                        <Grid Margin="0,14,11,14" Width="8" Height="11" HorizontalAlignment="Right">
+                            <Rectangle  Margin="-10,-10,-10,-10"/>
+                            <Path x:Name="Path_5" Stretch="Fill" Fill="#FF727272" Data="F1 M 296.456,77.7833C 296.657,77.9832 296.702,78.2203 296.593,78.4942C 296.484,78.7673 296.283,78.9042 295.991,78.9042L 289.484,78.9042C 289.192,78.9042 288.991,78.7673 288.882,78.4942C 288.773,78.2203 288.818,77.9832 289.019,77.7833L 292.273,74.5292C 292.4,74.4012 292.555,74.3372 292.737,74.3372C 292.92,74.3372 293.075,74.4012 293.202,74.5292M 289.484,80.6542L 295.991,80.6542C 296.283,80.6542 296.484,80.7913 296.593,81.0643C 296.702,81.3382 296.657,81.5753 296.456,81.7752L 293.202,85.0292C 293.075,85.1573 292.92,85.2203 292.737,85.2203C 292.555,85.2203 292.4,85.1573 292.273,85.0292L 289.019,81.7752C 288.818,81.5753 288.773,81.3382 288.882,81.0643C 288.991,80.7913 289.192,80.6542 289.484,80.6542 Z " Margin="0,0,0.174,0.116"/>
+                        </Grid>
+                        <Label x:Name="Path_8_Copy2" Content="Предприятие" Style="{StaticResource ResourceKey=NormalFont}"  Foreground="#FF333333" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" />
+                    </Grid>
+                    <Grid MouseDown="Grid_MouseDown" Height="39" Canvas.Left="350" Width="148">
+                        <Rectangle x:Name="Rectangle_3" Stretch="Fill" StrokeThickness="1.33333" StrokeLineJoin="Round" Stroke="#FFC4C4C4" Fill="#FFDDEAF2"/>
+                        <Grid  Margin="0,14,9,14" Width="8" Height="11" HorizontalAlignment="Right">
+                            <Rectangle  Margin="-10,-10,-10,-10"/>
+                            <Path x:Name="Path_6" Stretch="Fill" Fill="#FF727272" Data="F1 M 495.456,77.7833C 495.657,77.9832 495.702,78.2203 495.593,78.4942C 495.484,78.7673 495.283,78.9042 494.991,78.9042L 488.484,78.9042C 488.192,78.9042 487.991,78.7673 487.882,78.4942C 487.773,78.2203 487.818,77.9832 488.019,77.7833L 491.273,74.5292C 491.4,74.4012 491.555,74.3372 491.737,74.3372C 491.92,74.3372 492.075,74.4012 492.202,74.5292M 488.484,80.6542L 494.991,80.6542C 495.283,80.6542 495.484,80.7913 495.593,81.0643C 495.702,81.3382 495.657,81.5753 495.456,81.7752L 492.202,85.0292C 492.075,85.1573 491.92,85.2203 491.737,85.2203C 491.555,85.2203 491.4,85.1573 491.273,85.0292L 488.019,81.7752C 487.818,81.5753 487.773,81.3382 487.882,81.0643C 487.991,80.7913 488.192,80.6542 488.484,80.6542 Z " Margin="0,0,0.174,0.116"/>
+                        </Grid>
+                        <Label x:Name="Path_8_Copy3" Content="Ед. Изм." Style="{StaticResource ResourceKey=NormalFont}"  Foreground="#FF333333" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" />
+                    </Grid>
+                </Canvas>
+
+            </Grid>
+
+        </ScrollViewer>
+        <Viewbox Height="44" Stretch="None" Width="289" MouseEnter="Viewbox_MouseEnter" MouseLeave="Viewbox_MouseLeave" VerticalAlignment="Top">
+            <Viewbox.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Height" To="485"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Height" To="44"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Viewbox.Triggers>
+            <Grid Height="200" Width="289">
+                <Rectangle x:Name="fview" Fill="#FFDDEAF2" Margin="0,25,0,-5"/>
+                <StackPanel Orientation="Vertical" Margin="0,49,0,0">
+                    <Label Style="{StaticResource NormalFont}" Content="ОТ" HorizontalAlignment="Center"/>
+                    <DatePicker Language="RU" AdditionalControls:DatePickerCalendar.IsMonthYear="True"  x:Name="call1"/>
+                    <Label Style="{StaticResource NormalFont}" Content="ДО" HorizontalAlignment="Center"/>
+                    <DatePicker Language="RU" x:Name="call2" AdditionalControls:DatePickerCalendar.IsMonthYear="True"/>
+                    <AdditionalControls:CustomGrid StartColor="#FF86C000" EndColor="#FF008C95" Height="50" MouseDown="CustomGrid_MouseDown">
+                        <Rectangle Fill="#FF86C000" RadiusX="10" Stroke="#FF86C000" Margin="40,7,40,9" RadiusY="10"></Rectangle>
+                        <Label Style="{StaticResource NormalFont}" Content="Применить" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="20"/>
+                    </AdditionalControls:CustomGrid>
+
+                </StackPanel>
+                <Canvas Margin="0,0,0,168">
+                    <Grid Height="44" Width="289">
+                        <Path x:Name="Path_1" Stretch="Fill" Fill="#FFDDEAF2" Data="F1 M 330.596,0L 579.937,0C 590.99,0 599.949,8.95404 599.949,20L 599.949,24.46C 599.949,35.506 590.99,44.46 579.937,44.46L 330.596,44.46C 319.544,44.46 310.584,35.506 310.584,24.46L 310.584,20C 310.584,8.95404 319.544,0 330.596,0 Z "/>
+                        <Path x:Name="Path_3" Stretch="Fill" Fill="#FF333333" Data="F1 M 542.141,22.7153C 542.141,21.6794 542.842,21.2453 544.074,21.2453L 546.078,21.2453L 546.078,24.1713L 544.018,24.1713C 542.772,24.1713 542.141,23.7093 542.141,22.7153 Z M 544.032,20.0693C 542.043,20.0693 540.768,20.9514 540.768,22.6733C 540.768,23.8493 541.399,24.6193 542.505,24.9553L 540.698,27.4893L 542.141,27.4893L 543.766,25.1374L 543.92,25.1374L 546.078,25.1374L 546.078,27.4893L 547.282,27.4893L 547.282,20.0693M 531.602,27.4893L 532.835,27.4893L 537.373,22.0854L 537.373,27.4893L 538.718,27.4893L 538.718,20.0693L 537.499,20.0693L 532.947,25.4733L 532.947,20.0693L 531.602,20.0693M 522.067,27.4893L 523.412,27.4893L 523.412,24.3813L 527.643,24.3813L 527.643,27.4893L 528.987,27.4893L 528.987,20.0693L 527.643,20.0693L 527.643,23.2193L 523.412,23.2193L 523.412,20.0693L 522.067,20.0693M 516.158,26.5373C 515.135,26.5373 514.519,26.0754 514.519,25.3333C 514.519,24.7033 514.896,24.1853 516.228,24.1853L 518.301,24.1853L 518.301,25.2214C 517.965,26.0754 517.167,26.5373 516.158,26.5373 Z M 516.466,19.9993C 515.275,19.9993 514.169,20.3354 513.398,20.9514L 513.959,21.9593C 514.533,21.4693 515.43,21.1613 516.312,21.1613C 517.643,21.1613 518.301,21.8193 518.301,22.9533L 518.301,23.2193L 516.172,23.2193C 513.959,23.2193 513.188,24.1993 513.188,25.3893C 513.188,26.6773 514.253,27.5733 515.934,27.5733C 517.096,27.5733 517.923,27.1813 518.371,26.5093L 518.371,27.4893L 519.646,27.4893L 519.646,23.0093C 519.646,20.9793 518.497,19.9993 516.466,19.9993 Z M 508.688,26.4533L 506.53,26.4533L 506.53,24.2273L 508.772,24.2273C 509.878,24.2273 510.369,24.5913 510.369,25.3613C 510.369,26.1174 509.794,26.4533 508.688,26.4533 Z M 506.53,21.1053L 508.547,21.1053C 509.57,21.1053 510.116,21.4553 510.116,22.1694C 510.116,22.8833 509.57,23.2613 508.547,23.2613L 506.53,23.2613M 510.271,23.6393C 511.013,23.3453 511.461,22.7713 511.461,21.9733C 511.461,20.7553 510.411,20.0693 508.66,20.0693L 505.214,20.0693L 505.214,27.4893L 508.786,27.4893C 510.761,27.4893 511.713,26.7333 511.713,25.4453C 511.713,24.5073 511.251,23.8913 510.271,23.6393 Z M 499.419,26.3973C 497.99,26.3973 496.912,25.3613 496.912,23.7793C 496.912,22.1973 497.99,21.1753 499.419,21.1753C 500.848,21.1753 501.913,22.1973 501.913,23.7793C 501.913,25.3613 500.848,26.3973 499.419,26.3973 Z M 499.419,27.5733C 501.646,27.5733 503.271,25.9913 503.271,23.7793C 503.271,21.5673 501.646,19.9993 499.419,19.9993C 497.192,19.9993 495.553,21.5673 495.553,23.7793C 495.553,25.9913 497.192,27.5733 499.419,27.5733 Z M 490.42,26.3973C 489.005,26.3973 487.926,25.3613 487.926,23.7793C 487.926,22.2114 489.005,21.1753 490.42,21.1753C 491.849,21.1753 492.927,22.2114 492.927,23.7793C 492.927,25.3613 491.849,26.3973 490.42,26.3973 Z M 490.532,19.9993C 489.439,19.9993 488.487,20.4194 487.884,21.2453L 487.884,20.0693L 486.596,20.0693L 486.596,30.2053L 487.94,30.2053L 487.94,26.3693C 488.557,27.1673 489.481,27.5733 490.532,27.5733C 492.703,27.5733 494.286,26.0613 494.286,23.7793C 494.286,21.5113 492.703,19.9993 490.532,19.9993 Z M 476.869,27.4893L 478.102,27.4893L 482.64,22.0854L 482.64,27.4893L 483.985,27.4893L 483.985,20.0693L 482.766,20.0693L 478.214,25.4733L 478.214,20.0693L 476.869,20.0693M 473.27,23.6253C 474.082,23.3313 474.615,22.7293 474.615,21.9873C 474.615,20.7834 473.284,19.9714 471.477,19.9714C 470.524,19.9714 469.6,20.1673 468.633,20.6573L 468.997,21.6933C 469.81,21.3154 470.58,21.1193 471.337,21.1193C 472.471,21.1193 473.228,21.5113 473.228,22.1833C 473.228,22.8133 472.597,23.1773 471.603,23.1773L 470.342,23.1773L 470.342,24.1433L 471.701,24.1433C 472.794,24.1433 473.438,24.5353 473.438,25.2214C 473.438,25.9773 472.611,26.4393 471.351,26.4393C 470.44,26.4393 469.46,26.1873 468.745,25.7253L 468.339,26.7473C 469.165,27.2793 470.258,27.5873 471.365,27.5873C 473.34,27.5873 474.825,26.6773 474.825,25.3333C 474.825,24.4793 474.264,23.8774 473.27,23.6253 Z M 463.537,26.3973C 462.108,26.3973 461.03,25.3613 461.03,23.7793C 461.03,22.1973 462.108,21.1753 463.537,21.1753C 464.966,21.1753 466.031,22.1973 466.031,23.7793C 466.031,25.3613 464.966,26.3973 463.537,26.3973 Z M 463.537,27.5733C 465.764,27.5733 467.389,25.9913 467.389,23.7793C 467.389,21.5673 465.764,19.9993 463.537,19.9993C 461.31,19.9993 459.671,21.5673 459.671,23.7793C 459.671,25.9913 461.31,27.5733 463.537,27.5733 Z M 450.823,27.4893L 452.167,27.4893L 452.167,24.3813L 456.398,24.3813L 456.398,27.4893L 457.743,27.4893L 457.743,20.0693L 456.398,20.0693L 456.398,23.2193L 452.167,23.2193L 452.167,20.0693L 450.823,20.0693M 449.446,20.0693L 443.983,20.0693L 443.983,27.4893L 445.327,27.4893L 445.327,21.2453L 449.446,21.2453M 438.188,26.3973C 436.759,26.3973 435.681,25.3613 435.681,23.7793C 435.681,22.1973 436.759,21.1753 438.188,21.1753C 439.617,21.1753 440.682,22.1973 440.682,23.7793C 440.682,25.3613 439.617,26.3973 438.188,26.3973 Z M 438.188,27.5733C 440.416,27.5733 442.04,25.9913 442.04,23.7793C 442.04,21.5673 440.416,19.9993 438.188,19.9993C 435.961,19.9993 434.322,21.5673 434.322,23.7793C 434.322,25.9913 435.961,27.5733 438.188,27.5733 Z M 429.189,26.3973C 427.774,26.3973 426.695,25.3613 426.695,23.7793C 426.695,22.2114 427.774,21.1753 429.189,21.1753C 430.618,21.1753 431.696,22.2114 431.696,23.7793C 431.696,25.3613 430.618,26.3973 429.189,26.3973 Z M 429.301,19.9993C 428.208,19.9993 427.256,20.4194 426.653,21.2453L 426.653,20.0693L 425.365,20.0693L 425.365,30.2053L 426.709,30.2053L 426.709,26.3693C 427.326,27.1673 428.25,27.5733 429.301,27.5733C 431.472,27.5733 433.055,26.0613 433.055,23.7793C 433.055,21.5113 431.472,19.9993 429.301,19.9993 Z M 415.884,20.0693L 415.884,27.4893L 417.229,27.4893L 417.229,21.2453L 421.417,21.2453L 421.417,27.4893L 422.762,27.4893L 422.762,20.0693M 404.599,22.6733L 404.669,21.2453L 407.89,21.2453L 407.89,26.3133L 403.73,26.3133C 404.402,25.7253 404.542,24.2133 404.599,22.6733 Z M 409.235,26.3133L 409.235,20.0693L 403.478,20.0693L 403.366,22.5754C 403.268,24.4514 403.086,26.2573 402.021,26.3133L 401.629,26.3133L 401.629,29.2114L 402.904,29.2114L 402.904,27.4893L 409.109,27.4893L 409.109,29.2114L 410.37,29.2114L 410.37,26.3133M 397.08,26.3973C 395.651,26.3973 394.573,25.3613 394.573,23.7793C 394.573,22.1973 395.651,21.1753 397.08,21.1753C 398.509,21.1753 399.574,22.1973 399.574,23.7793C 399.574,25.3613 398.509,26.3973 397.08,26.3973 Z M 397.08,27.5733C 399.307,27.5733 400.932,25.9913 400.932,23.7793C 400.932,21.5673 399.307,19.9993 397.08,19.9993C 394.853,19.9993 393.214,21.5673 393.214,23.7793C 393.214,25.9913 394.853,27.5733 397.08,27.5733 Z M 384.174,27.4893L 385.406,27.4893L 389.945,22.0854L 389.945,27.4893L 391.29,27.4893L 391.29,20.0693L 390.071,20.0693L 385.518,25.4733L 385.518,20.0693L 384.174,20.0693M 378.354,26.3973C 376.939,26.3973 375.861,25.3613 375.861,23.7793C 375.861,22.2114 376.939,21.1753 378.354,21.1753C 379.783,21.1753 380.862,22.2114 380.862,23.7793C 380.862,25.3613 379.783,26.3973 378.354,26.3973 Z M 378.466,19.9993C 377.374,19.9993 376.421,20.4194 375.819,21.2453L 375.819,20.0693L 374.53,20.0693L 374.53,30.2053L 375.875,30.2053L 375.875,26.3693C 376.491,27.1673 377.416,27.5733 378.466,27.5733C 380.637,27.5733 382.22,26.0613 382.22,23.7793C 382.22,21.5113 380.637,19.9993 378.466,19.9993 Z M 368.774,21.1333C 370.076,21.1333 371.015,22.0153 371.155,23.2613L 366.392,23.2613C 366.532,22.0013 367.485,21.1333 368.774,21.1333 Z M 372.444,23.8213C 372.444,21.5393 370.917,19.9993 368.774,19.9993C 366.63,19.9993 365.047,21.5813 365.047,23.7793C 365.047,25.9913 366.644,27.5733 369.04,27.5733C 370.272,27.5733 371.295,27.1533 371.967,26.3693L 371.225,25.5013C 370.679,26.1033 369.95,26.3973 369.082,26.3973C 367.611,26.3973 366.56,25.5293 366.392,24.2273L 372.416,24.2273C 372.43,24.1013 372.444,23.9333 372.444,23.8213 Z M 354.453,17.6893L 354.453,27.4893L 355.84,27.4893L 355.84,18.9073L 361.527,18.9073L 361.527,27.4893L 362.9,27.4893L 362.9,17.6893L 354.453,17.6893 Z " Margin="43.086,18.242,53.45,13.702"/>
+                        <Path x:Name="Path_7" Stretch="Fill" Fill="#FF9CA5AB" Data="F1 M 567.157,24.0088L 560.778,17.6338C 560.559,17.4148 560.45,17.1498 560.45,16.8369C 560.45,16.5248 560.559,16.2588 560.778,16.0398L 561.857,15.0088C 562.076,14.7898 562.342,14.6808 562.654,14.6808C 562.967,14.6808 563.233,14.7898 563.452,15.0088L 567.954,19.5088L 572.457,15.0088C 572.676,14.7898 572.941,14.6808 573.254,14.6808C 573.567,14.6808 573.833,14.7898 574.052,15.0088L 575.131,16.0398C 575.35,16.2588 575.459,16.5248 575.459,16.8369C 575.459,17.1498 575.35,17.4148 575.131,17.6338L 568.752,24.0088C 568.533,24.2278 568.268,24.3369 567.954,24.3369C 567.642,24.3369 567.376,24.2278 567.157,24.0088 Z " Margin="249,15.172,25.356,19.632"/>
+                    </Grid>
+                </Canvas>
+                <Canvas Margin="0,5,0,-5"/>
+            </Grid>
+        </Viewbox>
+
+    </Canvas>
+
+
+</UserControl>
